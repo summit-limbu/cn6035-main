@@ -1,6 +1,6 @@
 import express from "express";
 import { getWeatherData } from "../controllers/weatherController.js";
-import { validateCityName } from "../middleware/validators.js";
+import { validateCityName } from "../middleware/validator.js";
 // We will create a router object
 const router = express.Router();
 // We will create a route for the weather data based on the city name
