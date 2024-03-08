@@ -1,0 +1,24 @@
+{
+  "name": "cn6035",
+  "version": "1.0.0",
+  "description": "API Program with gateways",
+  "type": "module",
+  "engines": {
+    "node": ">= 18.12 >21"
+  },
+  "author": "Summit Limbu",
+  "license": "MIT",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "express": "^4.18.3",
+    "express-validator": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "nodemon": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.2"
+  }
+}
