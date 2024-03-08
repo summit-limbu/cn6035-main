@@ -1,4 +1,4 @@
-import { param } from "express-validator";
+import { param } from 'express-validator';
 
 /**
  * Validates the city name param
@@ -11,8 +11,8 @@ import { param } from "express-validator";
  * );
  */
 
-export const validateCityName = param("city")
+export const validateCityName = param('city')
   .isString()
-  .isIn(["london", "dublin","paris","prague"]) // We will use the isIn method to check if the city param is either london or dublin
+  .isIn(['london', 'dublin', 'paris', 'prague']) // We will use the isIn method to check if the city param is either london or dublin
   // We will use the withMessage method to set a custom error message
-  .withMessage("City name must be either london or dublin");
+  .withMessage('City name must be either london or dublin');
