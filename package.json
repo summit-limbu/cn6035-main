@@ -1,7 +1,7 @@
 {
   "name": "cn6035",
   "version": "1.0.0",
-  "description": "API Program with gateways",
+  "description": "API Program with gateways. Work",
   "type": "module",
   "engines": {
     "node": ">= 18.12 >21"
