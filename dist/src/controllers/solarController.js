@@ -21,8 +21,8 @@ export const getSolarData = async (req, res) => {
     }
     catch (error) {
         // If there is an error, log it and send a 500 status code
-        console.error('Error in fetching solar data:', error);
-        res.status(500).send('Error in fetching solar data');
+        console.error('Error in fetching data:', error);
+        res.status(500).send('Error in fetching data');
     }
 };
 //# sourceMappingURL=solarController.js.map
