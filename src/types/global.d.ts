@@ -34,3 +34,11 @@ interface AstroInfo {
   people: { name: string; craft: string }[];
   number: number;
 }
+
+interface SolarInfo {
+  englishName: string;
+  isPlanet: boolean;
+  gravity: number;
+  meanRadius: number;
+  avgTemp: number;
+}

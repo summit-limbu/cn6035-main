@@ -4,6 +4,7 @@ import seismicRoute from './routes/seismicRoutes.js';
 import issRoute from './routes/issRoutes.js';
 import apodRoute from './routes/apodRoute.js';
 import astroRoute from './routes/astroRoute.js';
+import solarRoute from './routes/solarRoute.js';
 import cors from "cors";
 // Express
 const app = express();
@@ -21,6 +22,8 @@ app.use('/api/iss', issRoute);
 app.use('/api/apod', apodRoute);
 // astro route
 app.use('/api/astro', astroRoute);
+// solar route
+app.use('/api/solar', solarRoute);
 // Start the express server
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
