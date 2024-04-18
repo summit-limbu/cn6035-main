@@ -1,33 +1,19 @@
-import { Request, Response } from 'express';
 import axios from 'axios';
+import { processSolarData } from '../helpers/solarHelper.js';
 
-export const getSolarData = async (req: Request, res: Response) => {
-  try {
-    // Get the body name from the request parameters
-    const { bodyName } = req.params;
-    console.log(bodyName);
+export const getSolarData = async (req, res) => { 
+    try {
+        const { bodyName } = req.params;
+        console.log(bodyName);
 
-    // Construct the API endpoint URL using the body name
-    const apiUrl = `https://api.le-systeme-solaire.net/rest/bodies/${bodyName}`;
+        // Removed the response variable
+        const apiUrl = `https://api.le-systeme-solaire.net/rest/bodies/${bodyName}`;
+        await axios.get(apiUrl);
 
-    // Make an HTTP GET request to the solar data API endpoint
-    const response = await axios.get(apiUrl);
-
-    // Extract the solar data from the response
-    const solarData = {
-      englishName: response.data.englishName,
-      isPlanet: response.data.isPlanet,
-      gravity: response.data.gravity,
-      meanRadius: response.data.meanRadius,
-      avgTemp: response.data.avgTemp,
-    };
-
-    // Return the solar data as JSON
-    res.status(200).json(solarData);
-  } catch (error) {
-    // If there is an error, log it and send a 500 status code
-    console.error('Error in fetching data:', error);
-    res.status(500).send('Error in fetching data');
-  }
+        // Pass only bodyName to processSolarData
+        await processSolarData(bodyName, res);
+    } catch (error) {
+        console.error('Error in fetching data:', error);
+        res.status(500).send('Error in fetching data');
+    }
 };
-
